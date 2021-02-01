@@ -1,0 +1,23 @@
+{
+  "name": "webpackUtils",
+  "version": "1.0.0",
+  "description": "多页面打包方案",
+  "main": "index.js",
+  "scripts": {
+    "build": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ken-ding/webpackUtils.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ken-ding/webpackUtils/issues"
+  },
+  "homepage": "https://github.com/Ken-ding/webpackUtils#readme",
+  "dependencies": {
+    "html-webpack-plugin": "^4.5.1"
+  }
+}
