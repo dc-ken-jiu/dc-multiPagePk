@@ -1,6 +1,5 @@
-const glob = require("glob");
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const glob = require("glob");
 
 /**
  *获取项目根目录
@@ -44,7 +43,7 @@ function handleCustom(entryFile) {
         let dir = resloveDirs(paths[i], 1);
         if (!dir.length) continue;
         let reg = new RegExp(`src\/pages\/${paths[i]}\/(.*)\/index\.js`);
-        
+
         for (let j = 0; j < dir.length; j++) {
             let match = dir[j].match(reg);
             arr.push(setEntryHtml(match[1], paths[i], dir[j], 1))
@@ -64,7 +63,7 @@ function setEntryHtml(match, dirName, fullpath, type) {
         : type === 2
             ? `${dirName}/${match}`
             : `${dirName}/${match}/index`;
-    let html = new HtmlWebpackPlugin({
+    let html = {
         template: path.join(projectRoot, templatePath),
         filename: `${outputPath}.html`,
         chunks: ["vendors", outputPath],
@@ -76,7 +75,7 @@ function setEntryHtml(match, dirName, fullpath, type) {
             minifyJS: true,
             removeComments: true,
         },
-    })
+    };
     let entry = {}
     entry[outputPath] = fullpath;
     return {
