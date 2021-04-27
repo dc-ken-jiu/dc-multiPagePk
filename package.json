@@ -1,5 +1,5 @@
 {
-    "name": "webpackUtils",
+    "name": "@dcorg/multiPagePackag",
     "version": "1.0.0",
     "description": "多页面打包工具",
     "main": "index.js",
